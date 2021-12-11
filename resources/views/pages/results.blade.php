@@ -10,38 +10,28 @@
       <div id="results">
         <div>
           <div class="search-container">
-            <input class="search" type="text" value="Results" placeholder="Search">
+            <form action="/results" method="POST">
+              @csrf
+              <input class="search" type="text" value="{{ $search }}" placeholder="Search" name="search">
+            </form>
           </div>
           <div class="boxes">
             <div class="row">
-              <div class="col-md-3">
-                <div class="box">
-                  <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
+              @if (count($filtered_data) >= 1)
+                @foreach ($filtered_data as $inspiration)
+                  <div class="col-md-3">
+                    <div class="box">
+                      <div style="position: relative; background: url('{{ $inspiration->urls->small }}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
+                        <a href="/projects/inspiration/{{ $inspiration->id }}/add">
+                          <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="box">
-                  <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="box">
-                  <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="box">
-                  <div style="position: relative; background: url('https://mir-s3-cdn-cf.behance.net/projects/202/4c23c557876077.Y3JvcCwxMjIyLDk1Niw4Nyww.jpg') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
-                  </div>
-                </div>
-              </div>
+                @endforeach
+              @else
+                <h1>Sorry No Results...Please Try Again</h1>
+              @endif
             </div>
           </div>
         </div>
