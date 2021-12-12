@@ -25,7 +25,7 @@
                         @php
                         $coded_url = urlencode($inspiration->urls->regular)
                         @endphp
-                        <a href="/projects/inspiration/{{ $inspiration->id }}/add/{{ $coded_url }}">
+                        <a href="/projects/inspiration/{{ $inspiration->id }}/add?image_url={{ $coded_url }}">
                           <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
                         </a>
                       </div>

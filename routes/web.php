@@ -33,7 +33,8 @@ Route::put('/account/projects/{id}', 'ProjectController@update');
 Route::delete('/account/projects/{id}/delete', 'ProjectController@destroy');
 
 // INSPIRATIONS
-Route::get('/projects/inspiration/{id}/add', 'InspirationController@addImage')->middleware('auth');
+Route::get('/projects/inspiration/{image_info}/add', 'InspirationController@create')->middleware('auth');
+Route::get('/projects/inspiration/{image_info}/delete', 'InspirationController@destroy')->middleware('auth');
 
 // AUTHENTICATION
 Auth::routes();
