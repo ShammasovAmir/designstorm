@@ -22,7 +22,10 @@
                   <div class="col-md-3">
                     <div class="box">
                       <div style="position: relative; background: url('{{ $inspiration->urls->small }}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                        <a href="/projects/inspiration/{{ $inspiration->id }}/add">
+                        @php
+                        $coded_url = urlencode($inspiration->urls->regular)
+                        @endphp
+                        <a href="/projects/inspiration/{{ $inspiration->id }}/add/{{ $coded_url }}">
                           <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
                         </a>
                       </div>

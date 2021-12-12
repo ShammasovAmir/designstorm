@@ -2,12 +2,12 @@
   #projects {
   }
 
-  .edit-btn {
+  .btn {
     appearance: button;
     display: inline-block;
     text-decoration: none;
     backface-visibility: hidden;
-    background-color: #00c9b2;
+    background-color: #2a70ef;
     border-radius: 6px;
     border-width: 0;
     box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
@@ -29,10 +29,10 @@
     -webkit-user-select: none;
     touch-action: manipulation;
   }
-  .edit-btn:disabled {
+  .btn:disabled {
     cursor: default;
   }
-  .edit-btn:focus {
+  .btn:focus {
     box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
       rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
       rgba(50, 151, 211, 0.3) 0 0 0 4px;
@@ -52,14 +52,17 @@
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
-  }
-
-  th {
-    text-align: left;
+    width: calc(100% / 3);
+    text-align: center;
   }
 
   td {
     vertical-align: middle;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 
   thead {
@@ -90,4 +93,58 @@
       }
     }
   }
+
+  input {
+    margin: 1rem 0;
+  }
+
+  .btn.delete-btn {
+    background-color: #f60049;
+  }
+
+  .btn.delete-btn:focus {
+    box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+      rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+      rgba(246, 0, 73, 0.3) 0 0 0 4px;
+  }
+}
+
+.btn {
+  appearance: button;
+  display: inline-block;
+  text-decoration: none;
+  backface-visibility: hidden;
+  background-color: #2a70ef;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.15;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btn:disabled {
+  cursor: default;
+}
+.btn:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+
+.btn.delete-btn {
+  background-color: #f60049;
 }

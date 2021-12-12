@@ -869,35 +869,54 @@ header nav a:hover {
   margin-bottom: 10px;
 }
 
-#site-section label {
+label {
   text-transform: capitalize;
 }
 
-#site-section input,
-#site-section select,
-#site-section textarea {
+input,
+select,
+textarea {
   border: 1px solid #2a70ef;
   width: 100%;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 1rem;
 }
 
-#site-section input:focus,
-#site-section select:focus,
-#site-section textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
 }
 
-#site-section button {
-  min-width: 200px;
-  background: #2a70ef;
-  border: 1px solid #2a70ef;
-  color: white;
-  font-size: 1.2rem;
-  padding: 10px;
-  border-radius: 3px;
-  font-weight: 300;
-  margin: 0 auto;
+input.is-invalid {
+  border: 1px solid #f60049;
+}
+
+.invalid-feedback {
+  color: #f60049;
+}
+
+input[type=checkbox] {
+  width: initial;
+}
+
+.form-check-label {
+  padding-left: 5px;
+}
+
+.form-check {
+  display: flex;
+  justify-content: left;
+}
+
+.link {
+  display: block;
+  color: #2a70ef;
+  text-decoration: none;
+}
+
+.link:first-child {
+  margin-top: 1rem;
 }
 
 #admin-section {
@@ -992,7 +1011,7 @@ header nav a:hover {
   display: block;
 }
 
-#admin-section .edit-btn {
+#admin-section .btn {
   -webkit-appearance: button;
      -moz-appearance: button;
           appearance: button;
@@ -1000,7 +1019,7 @@ header nav a:hover {
   text-decoration: none;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  background-color: #00c9b2;
+  background-color: #2a70ef;
   border-radius: 6px;
   border-width: 0;
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
@@ -1024,11 +1043,11 @@ header nav a:hover {
   touch-action: manipulation;
 }
 
-#admin-section .edit-btn:disabled {
+#admin-section .btn:disabled {
   cursor: default;
 }
 
-#admin-section .edit-btn:focus {
+#admin-section .btn:focus {
   box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0, rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
 
@@ -1046,14 +1065,17 @@ header nav a:hover {
   padding: 15px;
   background-color: rgba(255, 255, 255, 0.2);
   color: #fff;
-}
-
-#admin-section th {
-  text-align: left;
+  width: 33.3333333333%;
+  text-align: center;
 }
 
 #admin-section td {
   vertical-align: middle;
+}
+
+#admin-section td a {
+  text-decoration: none;
+  color: #fff;
 }
 
 #admin-section thead th {
@@ -1077,6 +1099,62 @@ header nav a:hover {
   bottom: -9999px;
   background-color: rgba(255, 255, 255, 0.2);
   z-index: -1;
+}
+
+#admin-section input {
+  margin: 1rem 0;
+}
+
+#admin-section .btn.delete-btn {
+  background-color: #f60049;
+}
+
+#admin-section .btn.delete-btn:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0, rgba(246, 0, 73, 0.3) 0 0 0 4px;
+}
+
+.btn {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-color: #2a70ef;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.15;
+  outline: none;
+  overflow: hidden;
+  padding: 10px 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:disabled {
+  cursor: default;
+}
+
+.btn:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0, rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+
+.btn.delete-btn {
+  background-color: #f60049;
 }
 
 * {

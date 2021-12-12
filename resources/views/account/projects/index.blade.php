@@ -16,7 +16,7 @@
                 All of our projects
               </div>
               <div class="col-md-2">
-                <a href="/projects/create" class="edit-btn">Add New Project</a>
+                <a href="/account/projects/create" class="btn">Add New Project</a>
               </div>
             </div>
             <div class="row">
@@ -30,27 +30,25 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Website</td>
-                      <td>
-                        <a href="projects/id/edit" class="edit-btn" role="button">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>App</td>
-                      <td>
-                        <a href="projects/id/edit" class="edit-btn" role="button">Edit</a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Product</td>
-                      <td>
-                        <a href="projects/id/edit" class="edit-btn" role="button">Edit</a>
-                      </td>
-                    </tr>
+                    @if (count($projects) >= 1)
+                      @foreach ($projects as $project)
+                        <tr width="100%">
+                          <td>{{ $project->id }}</td>
+                          <td>
+                            <a href="/account/projects/{{ $project->id }}">{{ $project->title }}</a>
+                          </td>
+                          <td>
+                            <a href="/account/projects/{{ $project->id }}/edit" class="btn" role="button">Edit</a>
+                          </td>
+                        </tr>
+                      @endforeach
+                    @else
+                      <tr width="100%">
+                        <td></td>
+                        <td>Add new projects to display them here</td>
+                        <td></td>
+                      </tr>
+                    @endif
                   </tbody>
                 </table>
               </div>

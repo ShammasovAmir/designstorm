@@ -199,34 +199,66 @@ header {
       margin-bottom: 10px;
     }
   }
-  // FORMS
-  label {
-    text-transform: capitalize;
-  }
+}
 
-  input,
-  select,
-  textarea {
-    border: 1px solid #2a70ef;
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 1rem;
+// FORMS
+label {
+  text-transform: capitalize;
+}
 
-    &:focus {
-      outline: none;
-    }
-  }
+input,
+select,
+textarea {
+  border: 1px solid #2a70ef;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
 
-  button {
-    min-width: 200px;
-    background: #2a70ef;
-    border: 1px solid #2a70ef;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px;
-    border-radius: 3px;
-    font-weight: 300;
-    margin: 0 auto;
-    // float: right;
+  &:focus {
+    outline: none;
   }
+}
+
+input.is-invalid {
+  border: 1px solid #f60049;
+}
+
+.invalid-feedback {
+  color: #f60049;
+}
+
+input[type="checkbox"] {
+  width: initial;
+}
+
+.form-check-label {
+  padding-left: 5px;
+}
+
+.form-check {
+  display: flex;
+  justify-content: left;
+}
+
+// button {
+//   min-width: 200px;
+//   background: #2a70ef;
+//   border: 1px solid #2a70ef;
+//   color: white;
+//   font-size: 1.2rem;
+//   padding: 10px;
+//   border-radius: 3px;
+//   font-weight: 300;
+//   margin: 0 auto;
+//   // float: right;
+// }
+
+.link {
+  display: block;
+  color: #2a70ef;
+  text-decoration: none;
+}
+
+.link:first-child {
+  margin-top: 1rem;
 }
