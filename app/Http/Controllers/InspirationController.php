@@ -4,19 +4,29 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Inspiration;
+use App\Project;
+use Illuminate\Support\Facades\Auth;
 
 class InspirationController extends Controller
 {
     public function create(Request $request, $image_info) {
-        $saved_data = [
-            "image_info" => $image_info,
-            "image_url"  => $request->image_url,
-            "project_id" => 1
-        ];
+        $project = Project::where('user_id', Auth::id())
+            ->where('active', 1)
+            ->first();
 
-        $inspiration = Inspiration::create($saved_data);
+        if($project == null)
+            return redirect('account/project/create');
+        else {
+            $saved_data = [
+                "image_info" => $image_info,
+                "image_url"  => $request->image_url,
+                "project_id" => $project->id
+            ];
+    
+            $inspiration = Inspiration::create($saved_data);
 
-        return back();
+            return back();
+        }
     }
 
     public function destroy($image_info) {

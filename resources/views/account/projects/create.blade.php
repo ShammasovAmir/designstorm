@@ -19,6 +19,11 @@
                       @csrf
                       <label for="title">Title</label><br>
                       <input type="text" name="title" id="">
+                      <label for="active">Active</label><br>
+                      <select name="active">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
                       <button type="submit" class="btn">Save</button>
                     </form>
                   </div>

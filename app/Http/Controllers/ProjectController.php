@@ -21,9 +21,16 @@ class ProjectController extends Controller
     
     public function store(Request $request) {
         $project = new Project();
+
+        if($request->active == 1)
+            Project::where('user_id', Auth::id())
+                ->where('active', 1)
+                ->update(["active" => 0]);
+
         $project::create([
             "title"   => $request->title,
-            "user_id" => Auth::id()
+            "user_id" => Auth::id(),
+            "active"  => $request->active
         ]);
 
         return redirect('account/projects');
@@ -42,10 +49,16 @@ class ProjectController extends Controller
     }
     
     public function update(Request $request, $id) {
+        if($request->active == 1)
+            Project::where('user_id', Auth::id())
+                ->where('active', 1)
+                ->update(["active" => 0]);
+
         Project::where('id', $id)
             ->where('user_id', Auth::id())
             ->update([
-                "title" => $request->title
+                "title"  => $request->title,
+                "active" => $request->active
             ]);
 
         return back();
