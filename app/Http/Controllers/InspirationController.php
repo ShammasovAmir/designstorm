@@ -22,10 +22,14 @@ class InspirationController extends Controller
                 "image_url"  => $request->image_url,
                 "project_id" => $project->id
             ];
-    
-            $inspiration = Inspiration::create($saved_data);
 
-            return back();
+            if (Inspiration::where('image_info', $saved_data["image_info"])->exists())
+                return back();
+            else {
+                $inspiration = Inspiration::create($saved_data);
+    
+                return back();
+            }
         }
     }
 
