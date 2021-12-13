@@ -23,9 +23,16 @@ class InspirationController extends Controller
                 "project_id" => $project->id
             ];
 
-            if (Inspiration::where('image_info', $saved_data["image_info"])->exists())
-                return back();
-            else {
+            $same_inspiration = Inspiration::where('image_info', $saved_data["image_info"]);
+
+            if ($same_inspiration->exists()) {
+                if ($same_inspiration->first()->project_id == $project->id) return back();
+                else {
+                    $inspiration = Inspiration::create($saved_data);
+    
+                    return back();
+                }
+            } else {
                 $inspiration = Inspiration::create($saved_data);
     
                 return back();
