@@ -22,6 +22,9 @@
         <a class="active" href="/account/projects">
           <i class="fa fa-briefcase" aria-hidden="true"></i>Projects
         </a>
+        <a class="active" href="/search">
+          <i class="fa fa-search" aria-hidden="true"></i>Search
+        </a>
       </nav>
     </div>
     <div id="content-area">

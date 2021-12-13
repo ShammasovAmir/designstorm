@@ -225,6 +225,9 @@ input.is-invalid {
 
 .invalid-feedback {
   color: #f60049;
+  display: block;
+  padding-bottom: 0.5rem;
+  font-size: 12px;
 }
 
 input[type="checkbox"] {

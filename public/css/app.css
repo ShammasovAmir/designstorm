@@ -894,6 +894,9 @@ input.is-invalid {
 
 .invalid-feedback {
   color: #f60049;
+  display: block;
+  padding-bottom: 0.5rem;
+  font-size: 12px;
 }
 
 input[type=checkbox] {
@@ -1155,6 +1158,15 @@ input[type=checkbox] {
 
 .btn.delete-btn {
   background-color: #f60049;
+}
+
+.delete-inspiration {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  text-decoration: none;
+  text-align: center;
+  color: #f60049;
 }
 
 * {

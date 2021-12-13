@@ -25,13 +25,18 @@
                   </div>
                   <div class="img-section">
                     <div class="row">
-                      {{-- <div class="col-md-3">
-                        <div class="box" style="margin: 1rem">
-                          <div
-                            style="position: relative; background: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=MnwyODIyNzB8MHwxfHNlYXJjaHwyM3x8d2ViJTIwZGVzaWdufGVufDB8fHx8MTYzOTIyMzQ3NA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=400') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
+                      @foreach ($project->inspirations as $inspiration)
+                        <div class="col-md-3">
+                          <div class="box" style="margin: 1rem">
+                            <div
+                              style="position: relative; background: url('{{ $inspiration->image_url }}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
+                            </div>
+                            <a href="/projects/inspiration/{{$inspiration->image_info}}/delete" class="delete-inspiration">
+                              <i class="fa fa-trash"></i>
+                            </a>
                           </div>
                         </div>
-                      </div> --}}
+                      @endforeach
                     </div>
                   </div>
                   <button type="submit" class="btn">Save</button>
