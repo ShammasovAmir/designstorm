@@ -34,17 +34,22 @@ class PageController extends Controller
         $data = $res->getBody();
         $data = json_decode($data);
 
-        $filtered_data  = [];
-        $array_info     = [];
+        $filtered_data          = [];
+        $array_info             = [];
+        $active_inspiration_set = false;
 
         if (Auth::check()) {
-            $inspirations_array = Project::where('user_id', Auth::id())
+            $active_inspiration = Project::where('user_id', Auth::id())
                 ->where('active', 1)
-                ->first()
-                ->inspirations;
+                ->first();
 
-            foreach ($inspirations_array as $image) {
-                array_push($array_info, $image->image_info);
+            if (is_object($active_inspiration)) {
+                $inspirations_array = $active_inspiration->inspirations;
+                $active_inspiration_set = true;
+    
+                foreach ($inspirations_array as $image) {
+                    array_push($array_info, $image->image_info);
+                }
             }
         }
 
@@ -109,7 +114,8 @@ class PageController extends Controller
             'user', 
             'filtered_data', 
             'search', 
-            'array_info'
+            'array_info',
+            'active_inspiration_set'
         ));
     }
 }
