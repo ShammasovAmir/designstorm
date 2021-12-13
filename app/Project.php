@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'user_id'];
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
 
     public function inspirations() {
         return $this->hasMany('App\Inspiration');
