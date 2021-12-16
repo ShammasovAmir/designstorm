@@ -36,7 +36,7 @@
                   <div class="img-section">
                     <div class="row">
                       @foreach ($project->inspirations as $inspiration)
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                           <div class="box" style="margin: 1rem">
                             <div
                               style="position: relative; background: url('{{ $inspiration->image_url }}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">

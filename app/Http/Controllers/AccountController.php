@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Project;
+use Colors\RandomColor;
 
 class AccountController extends Controller
 {
@@ -15,7 +16,13 @@ class AccountController extends Controller
     {
         $projects = Project::all();
         $projects_total = $projects->count();
+        $colors_array = [];
 
-        return view('account.dashboard', compact('projects', 'projects_total'));
+        for ($i = 0; $i < $projects_total; $i++) {
+            $color = RandomColor::one();
+            array_push($colors_array, $color);
+        }
+
+        return view('account.dashboard', compact('projects', 'projects_total', 'colors_array'));
     }
 }
