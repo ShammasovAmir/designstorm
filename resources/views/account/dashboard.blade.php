@@ -17,7 +17,7 @@
             <div class="col-md-3">
                 <div class="box projects-total">
                     <h1>Projects Total</h1>
-                    <span class="large-number">21</span>
+                    <span class="large-number">{{ $projects_total }}</span>
                 </div>
             </div>
         </div>

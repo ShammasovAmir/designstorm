@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Project;
 
 class AccountController extends Controller
 {
@@ -11,7 +11,11 @@ class AccountController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
-        return view('account.dashboard');
+    public function index()
+    {
+        $projects = Project::all();
+        $projects_total = $projects->count();
+
+        return view('account.dashboard', compact('projects', 'projects_total'));
     }
 }
