@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title')
-  Design Strom - Inspiration for developers
+  Design Strom - Register
 @endsection
 
 @section('content')

@@ -34,6 +34,11 @@ class AccountController extends Controller
             array_push($projects_inspiration_count, $inspirations_count);
         }
 
-        return view('account.dashboard', compact('projects', 'projects_total', 'colors_array', 'projects_inspiration_count'));
+        return view('account.dashboard', compact(
+            'projects',
+            'projects_total',
+            'colors_array',
+            'projects_inspiration_count'
+        ));
     }
 }

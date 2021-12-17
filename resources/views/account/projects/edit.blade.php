@@ -1,7 +1,7 @@
 @extends('layouts.account')
 
 @section('title')
-    Account - Dashboard
+    {{ $project->title }}  - Edit Project
 @endsection
 
 @section('content')

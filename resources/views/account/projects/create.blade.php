@@ -1,7 +1,7 @@
 @extends('layouts.account')
 
 @section('title')
-    Account - Dashboard
+    Account - Add Project
 @endsection
 
 @section('content')
