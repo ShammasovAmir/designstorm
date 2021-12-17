@@ -9,7 +9,7 @@
         <h1>Dashboard</h1>
         <h6>This is your latest information</h6>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <div class="box">
                     <canvas id="myChart" width="400" height="200"></canvas>
                 </div>
