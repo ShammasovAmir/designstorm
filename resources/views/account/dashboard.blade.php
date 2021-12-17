@@ -22,32 +22,34 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js" integrity="sha512-tMabqarPtykgDtdtSqCL3uLVM0gS1ZkUAVhRFu1vSEFgvB73niFQWJuvviDyBGBH22Lcau4rHB5p2K2T0Xvr6Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         var ctx = document.getElementById("myChart").getContext("2d");
         var myChart = new Chart(ctx, {
-            type: "line",
+            type: "bar",
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: [
+                    @foreach ($projects as $project)
+                        "{{ $project->title }}",
+                    @endforeach
+                ],
                 datasets: [
                     {
                         label: "# of Votes",
-                        data: [12, 19, 3, 5, 2, 3],
+                        data: [
+                            @foreach ($projects_inspiration_count as $inspiration_count)
+                                "{{ $inspiration_count }}",
+                            @endforeach
+                        ],
                         backgroundColor: [
-                            "rgba(255, 99, 132, 0.2)",
-                            "rgba(54, 162, 235, 0.2)",
-                            "rgba(255, 206, 86, 0.2)",
-                            "rgba(75, 192, 192, 0.2)",
-                            "rgba(153, 102, 255, 0.2)",
-                            "rgba(255, 159, 64, 0.2)",
+                            @foreach ($colors_array as $color)
+                                "{{ $color }}",
+                            @endforeach
                         ],
                         borderColor: [
-                            "rgba(255,99,132,1)",
-                            "rgba(54, 162, 235, 1)",
-                            "rgba(255, 206, 86, 1)",
-                            "rgba(75, 192, 192, 1)",
-                            "rgba(153, 102, 255, 1)",
-                            "rgba(255, 159, 64, 1)",
+                            @foreach ($colors_array as $color)
+                                "{{ $color }}",
+                            @endforeach
                         ],
                         borderWidth: 1,
                     },
@@ -55,15 +57,11 @@
             },
             options: {
                 scales: {
-                    yAxes: [
-                        {
-                            ticks: {
-                                beginAtZero: true,
-                            },
-                        },
-                    ],
-                },
-            },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
         });
     </script>    
 @endsection
